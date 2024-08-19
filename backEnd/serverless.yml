@@ -1,0 +1,16 @@
+service: myService
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+plugins:
+  - serverless-offline
+
+functions:
+  showUser:
+    handler: handler.showUser
+    events:
+      - httpApi:
+          method: GET
+          path: '/'

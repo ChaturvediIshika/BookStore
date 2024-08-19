@@ -9,7 +9,6 @@ import Card from './Card';
 
 const Freebook = () => {
 
-    const items=[1,2,3,4,5];
     var settings = {
         dots: true,
         infinite: false,
@@ -60,12 +59,11 @@ const Freebook = () => {
         {/* Slider */}
         <div>
             <Slider {...settings}>
-                {
-                    items.map((item)=>{
-                        console.log(item);
-                        <Card key={item} item={item}/>
-                    })
-                }
+                
+                    {filteredData.map((item) => (
+                        <Card item={item} key={item.id} />
+                    ))}
+                
                 {/* <Card/> */}
 
             </Slider>
